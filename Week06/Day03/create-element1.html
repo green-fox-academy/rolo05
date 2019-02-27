@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: CreateElement</title>
+</head>
+
+<body>
+  <ul class="asteroids">
+    <li id="b325" class="asteroid">The King</li>
+    <li class="asteroid b326">The Conceited Man</li>
+  </ul>
+  <div class="container"></div>
+
+  <script>
+    /*Add an item that says 'The Green Fox' to the asteroid list.
+    Add an item that says 'The Lamplighter' to the asteroid list.
+    Add a heading saying 'I can add elements to the DOM!' to the .container.
+    Add an image, any image, to the container.*/
+
+    const asteroidList = document.querySelector('ul.asteroids');
+    const newAsteroid = document.createElement('li');
+    newAsteroid.id = 'b555';
+    newAsteroid.textContent = 'The Green Fox';
+    asteroidList.appendChild(newAsteroid);
+    
+    let newAsteroid1 = document.createElement('li');
+    newAsteroid1.className = 'valamiJozskagyerek';
+    newAsteroid1.textContent = 'The Lamplighter';
+    asteroidList.appendChild(newAsteroid1);
+
+    let bodypos = document.querySelector('div.container');
+    let newh1 = document.createElement('h1');
+    newh1.textContent = 'I can add elements to the DOM!';
+    bodypos.appendChild(newh1);
+
+    let newpic = document.createElement('img');
+    newpic.src = 'https://www.nationalgeographic.com/content/dam/photography/rights-exempt/best-of-photo-of-the-day/2018/may/01_best-pod-may-18.ngsversion.1528475828648.adapt.1900.1.jpg'
+    newpic.style = 'width:100%';
+    bodypos.appendChild(newpic);
+
+  </script>
+</body>
+
+</html>
