@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOM: Events</title>
+</head>
+
+<body>
+  <button onclick="setTimeout(renderSomething, 3000)">Try it</button>
+  <p></p>
+  <script>
+    'use strict';
+    const button = document.getElementsByTagName('button')[0];
+    function renderSomething() {
+      let text = document.getElementsByTagName('p')[0];
+      text.innerHTML = 'hope its going to work';
+    };
+
+    //button.addEventListener('click', renderSomething);
+  </script>
+</body>
+
+</html>
