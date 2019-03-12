@@ -1,0 +1,44 @@
+body{
+  background-color: aqua;
+}
+table{
+  color: black;
+  font-family: 'Gill Sans', Calibri, sans-serif;
+  height: 300px;
+  width: 600px;
+  border-collapse: collapse;
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 10px;
+}
+th{
+  background-color:black;
+  color: white;
+  border-bottom: 10px;
+  border-radius: 10px 10px 0px 0px ;
+  height: 30px;
+
+
+}
+tr:nth-child(1) td{
+  background-color: white;
+  color: grey;
+}
+
+td {
+    border: solid 2px black;
+    background-color:azure;
+    color:grey;
+    padding: 0px;
+}
+td:nth-child(2n)::before{
+  content:'$';
+}
+tr:nth-child(2n) td{
+  background-color: grey;
+  color: white;
+}
+td:nth-child(2n)::after{
+  content:',00';
+}
