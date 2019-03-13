@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="buttons.css">
+  <meta charset="UTF-8">
+  <title>Buttons</title>
+</head>
+
+<body>
+
+    <script>
+        let buttonNumbers = 5;
+        let colors = ['red', 'blue', 'green','red','black'];
+        function createButton(buttonNumbers) {
+          if (buttonNumbers == colors.length) {
+            for (let i = 0; i < buttonNumbers; i++) {
+              //let body = document.getElementsByTagName('body');
+              let btn = document.createElement("button");
+              let t = document.createTextNode(`${colors[i]}`);
+              btn.appendChild(t);
+              document.body.appendChild(btn);
+              btn.style.backgroundColor = `${colors[i]}`;
+      
+            }
+          }
+        }
+        createButton(buttonNumbers);
+      </script>
+</body>
+
+
+
+</html>

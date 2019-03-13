@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.item green{
+background-color: aqua;
+}
+.item yellow{
+background-color: blue;
+}
+.item purple{
+background-color: black;
+}
+
+.item {
+  align-self: flex-end;
+}

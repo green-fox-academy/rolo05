@@ -1,20 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <title>DOM: Events</title>
 </head>
-<body>
-  <button>click me</button>
 
+<body>
+
+
+
+
+  <div id="content">
+
+    <div class="box1" style="background-color: rgb(83, 123, 60);"></div>
+    <div class="box1" style="background-color: rgb(10, 130, 70);"></div>
+    <div class="box1" style="background-color: rgb(62, 33, 222);"></div>
+    <div class="box1" style="background-color: rgb(141, 184, 174);"></div>
+    <div class="box1" style="background-color: rgb(241, 23, 203);"></div>
+    <div class="box1" style="background-color: rgb(46, 141, 10);"></div>
+    <div class="box1" style="background-color: rgb(132, 33, 2);"></div>
+    <div class="box1" style="background-color: rgb(133, 94, 23);"></div>
+    <div class="box1" style="background-color: rgb(67, 29, 234);"></div>
+    <div class="box1" style="background-color: rgb(58, 122, 163);"></div>
+    <div class="box1" style="background-color: rgb(228, 56, 18);"></div>
+    <div class="box1" style="background-color: rgb(33, 175, 127);"></div>
+    <div class="box1" style="background-color: rgb(135, 41, 165);"></div>
+    <div class="box1" style="background-color: rgb(148, 170, 111);"></div>
+    <div class="box1" style="background-color: rgb(84, 195, 130);"></div>
+    <div class="box1" style="background-color: rgb(18, 128, 119);"></div>
+    <div class="box1" style="background-color: rgb(138, 214, 163);"></div>
+    <div class="box1" style="background-color: rgb(103, 182, 209);"></div>
+  </div>
+  <div id="loader">
+    <img src="../../img/example_loading.gif">
+    LOADING...
+  </div>
   <script>
-    'use strict';
-    const button = document.querySelector('button');
-    const alertGreenFox = () => {
-      alert('Green Fox!');
-    };
-    // Try mouseover too
-    button.addEventListener('click', alertGreenFox);
+    // init controller
+    var controller = new ScrollMagic.Controller();
+
+    // build scene
+    var scene = new ScrollMagic.Scene({ triggerElement: ".dynamicContent #loader", triggerHook: "onEnter" })
+      .addTo(controller)
+      .on("enter", function (e) {
+        if (!$("#loader").hasClass("active")) {
+          $("#loader").addClass("active");
+          if (console) {
+            console.log("loading new items");
+          }
+          // simulate ajax call to add content using the function below
+          setTimeout(addBoxes, 1000, 9);
+        }
+      });
+
+    // pseudo function to add new content. In real life it would be done through an ajax request.
+    function addBoxes(amount) {
+      for (i = 1; i <= amount; i++) {
+        var randomColor = '#' + ('00000' + (Math.random() * 0xFFFFFF << 0).toString(16)).slice(-6);
+        $("<div></div>")
+          .addClass("box1")
+          .css("background-color", randomColor)
+          .appendTo(".dynamicContent #content");
+      }
+      // "loading" done -> revert to normal state
+      scene.update(); // make sure the scene gets the new start position
+      $("#loader").removeClass("active");
+    }
+
+    // add some boxes to start with.
+    addBoxes(18);
   </script>
 </body>
+
 </html>
