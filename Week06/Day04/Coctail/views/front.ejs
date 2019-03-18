@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Coctails</title>
+<body>
+  <h1>Coctails:</h1>
+
+  <% list1.forEach(function(item){ %>
+    <h2><%= item %></h2>
+    <% }); %>
+
+  <ul>
+      <% list.forEach(function(item){ %>
+        <li><%= item.name %> <%= item.price %></li>
+        <% }); %>
+  </ul>
+
+</body>
+</head>
+</html>
