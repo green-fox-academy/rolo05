@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1, p {
+  color: #3cb878;
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+#gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* //x tengelyen kozepre */
+  align-items: center;  /* //y tengelyen koyepre */
+}
+img{
+  width: 900px;
+  height: 500px;
+}
+#gallery2 div img{
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+#buttonLeft{
+  background-image: url(/assets/nutarrowleft.jpg);
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+#buttonRight{
+  background-image:  url(/assets/nutarrow.JPG);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+button{
+ padding-top: 248px;
+ padding-bottom: 248px;
+  width: 120px;
+  height: 30px;
+  background-position: center;
+}
+
+#gallery2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+}
+
+.description{
+  position: relative;
+  bottom: 50px;
+  width: 100%;
+  background-color: rgba(253, 238, 238, 0.6);
+}
