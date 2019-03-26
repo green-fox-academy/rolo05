@@ -72,7 +72,7 @@ app.get('/questions',function(req,res){
   });
 });
 app.
-/* app.post("/addnewquestion",function(req,res){
+ app.post("/addnewquestion",function(req,res){
   connection.query('SELECT MAX(id) FROM question',function(err,data){
     let newID = newID++;
     connection.query(`INSERT INTO questions (id,question) VALUES ("${newID}","${req.body.question}");`,function(err,data){
